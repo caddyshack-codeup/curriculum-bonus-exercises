@@ -12,8 +12,14 @@
 </head>
 <body>
 
-<div id="newsletter">
-    <h1>Would you like to sign up for our newsletter?<span id="newsletter-toggle"> (&times;)</span></h1>
+<!--///////////////////  ADD BOOTSTRAP //////////////-->
+
+<!--<div id="newsletter">-->
+    <!--<h1>Would you like to sign up for our newsletter?<span id="newsletter-toggle"> (&times;)</span></h1>-->
+<!--</div>-->
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
 </div>
 
 <div>
@@ -88,15 +94,7 @@
     $(document).ready(function() {
         "use strict";
 
-        ////////////////////////////////////////////////////
-        //////// Bonus Exercise (Attributes and CSS) ///////
-        ////////////////////////////////////////////////////
-        // When any one dt is clicked, the element that was clicked should be highlighted.
 
-        $('dt').click(function() {
-            $(this).css('background', 'yellow');
-            $(this).next().css('background', 'yellow');
-        })
 
 
 
@@ -186,6 +184,16 @@
         // *****************************************
         // *****************************************
         // *****************************************
+
+        ////////////////////////////////////////////////////
+        //////// Bonus Exercise (Attributes and CSS) ///////
+        ////////////////////////////////////////////////////
+        // When any one dt is clicked, the element that was clicked should be highlighted.
+
+        $('dt').click(function() {
+            $(this).css('background', 'yellow');
+            $(this).next().css('background', 'yellow');
+        })
 
 
     });
