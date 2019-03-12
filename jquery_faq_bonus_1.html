@@ -94,14 +94,16 @@
     $(document).ready(function() {
         "use strict";
 
+        ////////////////////////////////////////////////////
+        //////// Bonus Exercise (Attributes and CSS) ///////
+        ////////////////////////////////////////////////////
+        // When any one dt is clicked, the element that was
+        // clicked should be highlighted.
 
-
-
-
-
-
-
-
+        $('dt').click(function() {
+            $(this).css('background', 'yellow');
+            $(this).next().css('background', 'yellow');
+        })
 
 
         // *****************************************
@@ -185,15 +187,6 @@
         // *****************************************
         // *****************************************
 
-        ////////////////////////////////////////////////////
-        //////// Bonus Exercise (Attributes and CSS) ///////
-        ////////////////////////////////////////////////////
-        // When any one dt is clicked, the element that was clicked should be highlighted.
-
-        $('dt').click(function() {
-            $(this).css('background', 'yellow');
-            $(this).next().css('background', 'yellow');
-        })
 
 
     });
