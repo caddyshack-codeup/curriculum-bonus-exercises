@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map, Filter, Reduce Bonus</title>
+</head>
+<body>
+
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+
+    $(document).ready(function() {
+        "use strict";
+
+        /////////////////////////////////////////////////
+        ///////// BONUS Map, Filter, and Reduce /////////
+        /////////////////////////////////////////////////
+        // 1. Use reduce to get the unique list of languages from the list of users.
+
+        const users = [
+            {
+                id: 1,
+                name: 'ryan',
+                email: 'ryan@codeup.com',
+                languages: ['clojure', 'javascript'],
+                yearsOfExperience: 5
+            },
+            {
+                id: 2,
+                name: 'luis',
+                email: 'luis@codeup.com',
+                languages: ['java', 'scala', 'php'],
+                yearsOfExperience: 6
+            },
+            {
+                id: 3,
+                name: 'zach',
+                email: 'zach@codeup.com',
+                languages: ['javascript', 'bash'],
+                yearsOfExperience: 7
+            },
+            {
+                id: 4,
+                name: 'fernando',
+                email: 'fernando@codeup.com',
+                languages: ['java', 'php', 'sql'],
+                yearsOfExperience: 8
+            },
+            {
+                id: 5,
+                name: 'justin',
+                email: 'justin@codeup.com',
+                languages: ['html', 'css', 'javascript', 'php'],
+                yearsOfExperience: 9
+            }
+        ];
+
+
+        function getLanguages(array) {
+            const languageList = array.reduce(function(total, user) {
+                // if (typeof total[user.languages] === 'undefined') {
+                //     total[user.languages] = 1;
+                // } else {
+                //     total[user.languages] += 1;
+                // }
+                return `${total},${user.languages}`;
+            }, '');
+            return languageList;
+        }
+
+        function makeList(userString) {
+            let userArray = [];
+            userArray = userString.split(',');
+            userArray.shift();
+
+            return userArray;
+
+        }
+
+        // console.log(makeList(getLanguages(users)));
+
+        function unique(arr) {
+            var hash = {}, result = [];
+            for (var i = 0; i < arr.length; i++)
+                if (!(arr[i] in hash)) { //it works with objects! in FF, at least
+                    hash[arr[i]] = true;
+                    result.push(arr[i]);
+                }
+            return result;
+        }
+
+        console.log(unique(makeList(getLanguages(users))));
+
+    });
+
+</script>
+
+</body>
+</html>
